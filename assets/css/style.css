@@ -1,0 +1,102 @@
+.card .card-content .card-title,
+header h1 {
+    font-size: 30px;
+    color: blue;
+}
+
+.card .card-content .card-text-2,
+.card .card-content .card-text-1 {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: #fff;
+}
+
+header {
+    padding: 10px;
+    max-width: 1080px;
+    margin: 30px auto;
+    border-radius: 5px;
+    background-color: rgba(0, 81, 255, 0.452);
+}
+header h1 {
+    text-align: center;
+}
+
+header nav a {
+    text-decoration: none;
+}
+
+nav {
+    padding: 10px;
+}
+
+.container-link {
+    text-align: center;
+}
+
+.link {
+    margin: auto;
+    padding: 10px 30px;
+    background-color: rgba(0, 81, 255, 0.452);
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+}
+.link:hover {
+    background-color: rgb(58, 114, 212);
+}
+
+.hero {
+    padding: 20px;
+    max-width: 1080px;
+    margin: 30px auto;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    width: 300px;
+    height: 450px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.card .card-img {
+    width: 100%;
+}
+.card .card-content {
+    padding: 10px;
+}
+
+.card .card-content .card-title {
+    text-align: center;
+    margin: 20px;
+}
+
+.card .card-content .card-text-1 {
+    padding: 10px 10px;
+    color: blue;
+    font-size: 14px;
+}
+
+.card .card-content .card-text-2 {
+    padding: 10px 10px;
+    color: blue;
+    font-size: 14px;
+}
+
+.card:hover {
+    box-shadow: 4px 4px 12px rgba(0, 0, 95, 0.6);
+} /*# sourceMappingURL=style.css.map */

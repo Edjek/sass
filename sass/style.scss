@@ -1,0 +1,81 @@
+@import 'utils/variables';
+@import 'utils/mixins';
+@import 'utils/placeholders';
+@import 'utils/functions';
+@import 'base/reset';
+
+a {
+    color: #fff;
+}
+
+header {
+    @include layout(10px, 30px);
+    background-color: $main-color;
+
+    h1 {
+        text-align: center;
+        @extend %title;
+    }
+}
+
+header nav a {
+    text-decoration: none;
+}
+
+nav {
+    padding: 10px;
+}
+
+.container-link {
+    text-align: center;
+}
+
+.link {
+    margin: auto;
+    padding: $padding;
+    background-color: $main-color;
+    border-radius: multiplication(2, 5) + px;
+    text-decoration: none;
+    color: #fff;
+
+    &:hover {
+        background-color: $secondary-color;
+    }
+}
+
+.hero {
+    @include layout(20px, 30px);
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    width: 300px;
+    height: 450px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+
+    .card-img {
+        width: 100%;
+    }
+    .card-content {
+        padding: 10px;
+
+        .card-title {
+            @extend %title;
+            text-align: center;
+            margin: 20px;
+        }
+        @for $i from 1 through 2 {
+            .card-text-#{$i} {
+                @include paragraph(10px 10px, blue, 14px);
+                @extend %paragraph;
+            }
+        }
+    }
+    &:hover {
+        box-shadow: 4px 4px 12px rgba(0, 0, random(255), 0.6);
+    }
+}

@@ -1,0 +1,12 @@
+@mixin layout($padding, $margin) {
+    padding: $padding;
+    max-width: 1080px;
+    margin: $margin auto;
+    border-radius: 5px;
+}
+
+@mixin paragraph($padding, $color, $font-size) {
+    padding: $padding;
+    color: $color;
+    font-size: $font-size;
+}
