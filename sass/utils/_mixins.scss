@@ -1,3 +1,4 @@
+// Les mixins permettent d'insérer des bouts de code avec des paramètres personnalisables
 @mixin layout($padding, $margin) {
     padding: $padding;
     max-width: 1080px;

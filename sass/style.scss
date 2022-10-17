@@ -1,3 +1,5 @@
+// Les imports permettent d'intégrer les fichiers partials
+// L'order importe importer les variable, puis les fonctions, le reset et le code dans l'ordre logique
 @import 'utils/variables';
 @import 'utils/mixins';
 @import 'utils/placeholders';
@@ -9,11 +11,13 @@ a {
 }
 
 header {
+    // Utilisation d'une mixin
     @include layout(10px, 30px);
     background-color: $main-color;
 
     h1 {
         text-align: center;
+        // Utilisation d'un placeholder
         @extend %title;
     }
 }
@@ -30,6 +34,7 @@ nav {
     text-align: center;
 }
 
+// Nesting (imbriquation)
 .link {
     margin: auto;
     padding: $padding;
@@ -37,13 +42,15 @@ nav {
     border-radius: multiplication(2, 5) + px;
     text-decoration: none;
     color: #fff;
-
+    // l'élément "&" permet d'inserer le nom du selecteur dans lequel il est imbriqué
+    // Ici ce la donner : .link:hover
     &:hover {
         background-color: $secondary-color;
     }
 }
 
 .hero {
+    // Utilisation d'une mixin
     @include layout(20px, 30px);
     display: flex;
     justify-content: space-between;
@@ -64,17 +71,23 @@ nav {
         padding: 10px;
 
         .card-title {
+            // Utilisation d'un placeholder
             @extend %title;
             text-align: center;
             margin: 20px;
         }
+        // Sass nous permet de faire des boucles
+        // Ici la boucle va faire 2 tours
         @for $i from 1 through 2 {
             .card-text-#{$i} {
+                // Utilisation d'une mixin
                 @include paragraph(10px 10px, blue, 14px);
+                // Utilisation d'un placeholder
                 @extend %paragraph;
             }
         }
     }
+    // Ici ce la donner : .card:hover
     &:hover {
         box-shadow: 4px 4px 12px rgba(0, 0, random(255), 0.6);
     }
