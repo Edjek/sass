@@ -67,7 +67,11 @@ nav {
     .card-img {
         width: 100%;
     }
-    .card-content {
+    // l'élément "&" permet d'inserer le nom du selecteur dans lequel il est imbriqué
+    // Ici cela va donner : .link:hover
+    //Attention le Nesting créé des selecteurs descendant par défaut
+    // L'utilisation du préfixe "&" va créer un selecteur indépendant
+    &-content {
         padding: 10px;
 
         .card-title {
@@ -87,6 +91,7 @@ nav {
             }
         }
     }
+    // l'élément "&" permet d'inserer le nom du selecteur dans lequel il est imbriqué
     // Ici cela va donner : .card:hover
     &:hover {
         box-shadow: 4px 4px 12px rgba(0, 0, random(255), 0.6);
