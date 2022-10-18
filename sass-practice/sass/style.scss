@@ -1,0 +1,99 @@
+@import 'utils/partial';
+@import 'utils/placeholders';
+@import 'utils/mixins';
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+}
+
+// 1. Créer une palette de 5 variables qui représentent des nuances de bleu en hexadécimal
+// darken(blue, 20%)
+// lighten(red, 10%)
+
+// 2. Utilisez le "nesting" de SASS afin d'imbriquer les sélecteurs suivants
+
+.container {
+    // utilisez une des variables créée précédemment pour la couleur du background
+    background: $blue;
+    color: #f1f1f1;
+    padding: 40px;
+    border-radius: 5px;
+    max-width: 900px;
+    margin: 20px auto 0;
+    h1 {
+        font-size: 40px;
+    }
+    button {
+        padding: 10px 15px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+        &:hover {
+            background: lightblue;
+            color: #f1f1f1;
+        }
+    }
+}
+
+// 3. Partagez les trois propriétés suivantes avec les h2, h3 & h4.
+// Le résultat dans le style.css devrait ressembler à ceci :
+// h2, h3, h4 {
+//     font-size: 45px;
+//     text-align: center;
+//     padding: 12px 0;
+//   }
+
+h2 {
+    color: crimson;
+    @extend %sub-title;
+}
+h3 {
+    color: lightgreen;
+    @extend %sub-title;
+}
+h4 {
+    color: lightblue;
+    @extend %sub-title;
+}
+
+// 4. Créez un mixin avec des paramètres pour éviter les répétitions.
+// Les sélecteurs ne doivent pas avoir de propriétés propres, tout doit être compris dans le mixin et ses paramètres.
+
+.inp-large {
+    @include input(24px, 20px, 800px);
+}
+
+.inp-small {
+    @include input(16px, 14px, 250px);
+}
+
+// 5. Utilisez une boucle pour ajouter 1px de hauteur et de largeur aux 100 blocks de manière incrémentale (b1,b2,b3 etc ...).
+// 1px 1px
+// 2px 2px
+
+.blocks-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .block {
+        border: 10px solid rgb(43, 220, 20);
+        background: #000;
+        margin: 20px;
+    }
+
+    @for $i from 1 through 100 {
+        .b#{$i} {
+            width: $i + px;
+            height: $i + px;
+        }
+    }
+}

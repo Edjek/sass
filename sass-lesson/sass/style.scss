@@ -1,11 +1,11 @@
 // Les imports permettent d'intégrer les fichiers partials
-// L'order importe importer les variable, puis les fonctions, le reset et le code dans l'ordre logique
+// L'ordre importe importer les variable, puis les fonctions, le reset et le code dans l'ordre logique
 @import 'utils/variables';
 @import 'utils/mixins';
 @import 'utils/placeholders';
 @import 'utils/functions';
 @import 'base/reset';
-
+@import 'pages/home';
 a {
     color: #fff;
 }
@@ -14,13 +14,13 @@ header {
     // Utilisation d'une mixin
     @include layout(10px, 30px);
     background-color: $main-color;
-
     h1 {
         text-align: center;
         // Utilisation d'un placeholder
         @extend %title;
     }
 }
+
 
 header nav a {
     text-decoration: none;
@@ -53,6 +53,7 @@ nav {
     // Utilisation d'une mixin
     @include layout(20px, 30px);
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -96,4 +97,8 @@ nav {
     &:hover {
         box-shadow: 4px 4px 12px rgba(0, 0, random(255), 0.6);
     }
+}
+
+.card:hover {
+
 }
