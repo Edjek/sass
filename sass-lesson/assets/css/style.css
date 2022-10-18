@@ -59,6 +59,8 @@ nav {
   margin: 30px auto;
   border-radius: 5px;
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   justify-content: space-between;
 }
 
@@ -91,5 +93,5 @@ nav {
   font-size: 14px;
 }
 .card:hover {
-  box-shadow: 4px 4px 12px rgba(0, 0, 118, 0.6);
+  box-shadow: 4px 4px 12px rgba(0, 0, 189, 0.6);
 }/*# sourceMappingURL=style.css.map */

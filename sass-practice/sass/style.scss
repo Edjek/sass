@@ -16,6 +16,7 @@ body {
 // 1. Créer une palette de 5 variables qui représentent des nuances de bleu en hexadécimal
 // darken(blue, 20%)
 // lighten(red, 10%)
+// solution dans le partial : _variables.scss
 
 // 2. Utilisez le "nesting" de SASS afin d'imbriquer les sélecteurs suivants
 
@@ -51,6 +52,7 @@ body {
 //     text-align: center;
 //     padding: 12px 0;
 //   }
+// solution dans le partial : placeholders.scss
 
 h2 {
     color: crimson;
@@ -67,6 +69,7 @@ h4 {
 
 // 4. Créez un mixin avec des paramètres pour éviter les répétitions.
 // Les sélecteurs ne doivent pas avoir de propriétés propres, tout doit être compris dans le mixin et ses paramètres.
+// solution dans le partial : _mixins.scss
 
 .inp-large {
     @include input(24px, 20px, 800px);
@@ -89,11 +92,11 @@ h4 {
         background: #000;
         margin: 20px;
     }
+}
 
-    @for $i from 1 through 100 {
-        .b#{$i} {
-            width: $i + px;
-            height: $i + px;
-        }
+@for $i from 1 through 100 {
+    .b#{$i} {
+        width: $i + px;
+        height: $i + px;
     }
 }
